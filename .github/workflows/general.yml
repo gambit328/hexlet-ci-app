@@ -1,0 +1,17 @@
+name: general
+on: push
+jobs:
+  check:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repo
+        uses: actions/checkout@v5
+
+      - name: setup project
+        run: make setup
+
+      - name: start tests
+        run: make test
+
+      - name: start linter
+        run: make lint
