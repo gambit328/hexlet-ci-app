@@ -1,8 +1,19 @@
 name: general
+
 on: push
+
+env:
+  CI: true
+
 jobs:
-  check:
+  build:
+
     runs-on: ubuntu-latest
+
+    strategy:
+      matrix:
+        node-version: [18.x]
+
     steps:
       - name: Checkout repo
         uses: actions/checkout@v5
