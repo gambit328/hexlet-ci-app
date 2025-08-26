@@ -20,6 +20,9 @@ jobs:
 
       - name: install Node.js
         uses: actions/setup-node@v4
+        with:
+          node-version: ${{ matrix.node-version }}
+          cache: 'npm'
 
       - name: setup project
         run: make setup
